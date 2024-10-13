@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposals</title>
+</head>
+<body>
+    <h1>Submitted Proposals</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Vehicle Make</th>
+                <th>Vehicle Model</th>
+                <th>Vehicle Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proposal in proposals %}
+            <tr>
+                <td>{{ proposal.name }}</td>
+                <td>{{ proposal.email }}</td>
+                <td>{{ proposal.vehicle_make }}</td>
+                <td>{{ proposal.vehicle_model }}</td>
+                <td>{{ proposal.vehicle_year }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No proposals submitted.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

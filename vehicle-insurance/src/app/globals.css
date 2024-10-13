@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fade-in.animate {
+    animation: fadeInAnimation 1s forwards;
+  }

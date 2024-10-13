@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted Claims</title>
+</head>
+<body>
+    <h1>Submitted Claims</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Policy Number</th>
+                <th>Claim Description</th>
+                <th>Claim Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for claim in claims %}
+            <tr>
+                <td>{{ claim.policy_number }}</td>
+                <td>{{ claim.claim_description }}</td>
+                <td>${{ claim.claim_amount }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">No claims submitted.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
